@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+
+  <style>
+  	h1 {
+  		text-align: center;
+  	}
+
+  	.container {
+  		width: 80%;
+  		margin: 0 auto;
+  		background-color: black;
+  		color: #fff;
+  	}
+
+  	span {
+  		text-decoration: underline;
+  	}
+
+  	main {
+  		text-align: center;
+  		font-size: 18px;
+  		padding: 10% 0;
+  	}
+  </style>
+</head>
+<body>
+<script>
+	const pressed = [];
+	const secretCode = 'cats';
+	window.addEventListener('keyup', (e) => {
+		console.log(e.key);
+		pressed.push(e.key);
+		pressed.splice(-secretCode.length -1, pressed.length - secretCode.length);
+
+		if(pressed.join('').includes(secretCode)) {
+			console.log('Yay Cats Cats Cats!!! Everyone loves Cats!');
+			cornify_add();
+		}
+		console.log(pressed);
+	})
+</script>
+
+	<div class="container">
+		<header>
+			<h1> Type <span>cats</span> on the keyboard I dare you, then type it again and and again!!!</h1>
+		</header>
+
+		<main>
+			<p>Just having some fun with Javascript! Hope you enjoyed it!</p>
+		</main>
+	</div>
+</body>
+</html>
